@@ -106,8 +106,7 @@ function spawn(sdks: util.Sdks): Thenable<StreamInfo> {
 	writer.pipe(process.stdin);
 
 	return Promise.resolve({ reader, writer });
-	//}
-
+	// }
 }
 
 class LoggingTransform extends stream.Transform {
