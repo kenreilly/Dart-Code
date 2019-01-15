@@ -6,6 +6,7 @@ import * as semver from "semver";
 import * as vs from "vscode";
 import { dartCodeExtensionIdentifier, flatMap, LogCategory, LogSeverity } from "../src/debug/utils";
 import { ExtensionApi } from "../src/extension";
+import { lspReady } from "../src/lsp/setup";
 import { internalApiSymbol } from "../src/symbols";
 import { fsPath, isAnalyzable, ProjectType, vsCodeVersionConstraint } from "../src/utils";
 import { log, logError, logTo, logWarn } from "../src/utils/log";
@@ -80,6 +81,7 @@ export async function activateWithoutAnalysis(): Promise<void> {
 	log("Activating");
 	await ext.activate();
 	extApi = ext.exports[internalApiSymbol];
+	await lspReady();
 }
 
 export async function activate(file?: vs.Uri | null | undefined): Promise<void> {

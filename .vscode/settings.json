@@ -25,5 +25,6 @@
 	"dart.analysisExcludedFolders": [
 		"test/test_projects/flutter_create_basic",
 		"test/test_projects/flutter_create_sample"
-	]
+	],
+	"dart.previewLsp": false,
 }
